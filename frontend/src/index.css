@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ui-background text-ui-text-primary;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-ui-accent-primary text-ui-text-primary rounded-lg hover:bg-ui-accent-hover transition-colors;
+  }
+
+  .btn-outline {
+    @apply px-4 py-2 border border-ui-border rounded-lg hover:bg-ui-backgroundLight transition-colors;
+  }
+
+  .card {
+    @apply bg-ui-backgroundLight rounded-lg shadow-sm p-6;
+  }
+
+  .input {
+    @apply px-4 py-2 border border-ui-border rounded-lg focus:ring-2 focus:ring-ui-accent-primary focus:border-transparent;
+  }
+
+  .select {
+    @apply px-4 py-2 border border-ui-border rounded-lg focus:ring-2 focus:ring-ui-accent-primary focus:border-transparent;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+    --tw-gradient-from: #1DE59C;
+    --tw-gradient-to: #153564;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    background-size: 200% 200%;
+    animation: gradient 8s linear infinite;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-200 rounded-full hover:bg-primary-300 transition-colors;
+} 
